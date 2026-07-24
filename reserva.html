@@ -3,174 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trayectoria — Dr. Edgardo Sabogal</title>
+<title>Reservar turno — Dr. Edgardo Sabogal</title>
 <link rel="stylesheet" href="estilo.css">
-<script src="image-slot.js"></script>
 <style>
-.profile-hero{background:var(--teal-dark);color:#dceef2;padding:70px 0 60px}
-.profile-hero .wrap{display:grid;grid-template-columns:280px minmax(0,1fr);gap:48px;align-items:center}
-.profile-hero h1{color:#fff;font-size:46px;margin:10px 0 14px}
-.profile-hero p{color:#b8d2d8;font-size:18px;max-width:60ch}
-.profile-hero image-slot{width:280px;height:340px}
-.ph-stats{display:flex;gap:36px;margin-top:26px;flex-wrap:wrap}
-.ph-stats b{font-family:'Cormorant Garamond',serif;font-size:34px;color:#fff;display:block;line-height:1}
-.ph-stats span{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9dbcc3}
-.section{padding:60px 0}
-.section h2{font-size:34px;margin:6px 0 30px}
-.timeline{position:relative;padding-left:28px;display:grid;gap:26px}
-.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
-.t-item{position:relative}
-.t-item::before{content:"";position:absolute;left:-28px;top:7px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
-.t-item .year{font-size:13px;letter-spacing:.15em;color:var(--gold);font-weight:600}
-.t-item h3{font-size:21px;margin:2px 0 4px}
-.t-item p{font-size:15px;color:var(--ink-soft)}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.member-grid{display:grid;gap:14px}
-.member{display:flex;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px}
-.member .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);margin-top:7px;flex:none}
-.member b{color:var(--teal-dark)}
-.member span{display:block;font-size:14px;color:var(--ink-soft)}
-.work-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:10px}
-.work-gallery image-slot{height:220px;min-width:0;width:100%}
-.awards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.award{background:#fff;border:1px solid var(--line);border-left:none;border-radius:10px;padding:22px;position:relative;overflow:hidden}
-.award::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
-.award .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.award h3{font-size:19px;margin:6px 0 4px}
-.award p{font-size:14px;color:var(--ink-soft)}
-.papers{display:grid;gap:0}
-.paper{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
-.paper .yr{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold)}
-.paper h3{font-size:18px;margin-bottom:3px}
-.paper p{font-size:14px;color:var(--ink-soft)}
-.cta-band{background:var(--teal-soft);border-radius:16px;padding:44px;text-align:center}
-.cta-band h2{margin-bottom:10px}
-.cta-band p{color:var(--ink-soft);max-width:52ch;margin:0 auto 24px}
-.cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-@media (max-width:860px){.profile-hero .wrap,.two-col,.awards{grid-template-columns:1fr}.work-gallery{grid-template-columns:1fr}.profile-hero image-slot{width:100%}}
+.wizard-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+.wizard-head{text-align:center;margin-bottom:34px}
+.wizard-head h1{font-size:38px;margin:8px 0 10px}
+.wizard-head p{color:var(--ink-soft);max-width:52ch;margin:0 auto}
+.steps{display:flex;justify-content:center;gap:0;margin-bottom:36px}
+.step-dot{display:flex;flex-direction:column;align-items:center;gap:6px;width:120px;position:relative}
+.step-dot::before{content:"";position:absolute;top:16px;left:-50%;width:100%;height:2px;background:var(--line);z-index:0}
+.step-dot:first-child::before{display:none}
+.step-dot .c{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--line);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;position:relative;z-index:1;transition:all .2s}
+.step-dot span{font-size:12px;color:var(--ink-soft)}
+.step-dot.active .c{border-color:var(--teal);background:var(--teal);color:#fff}
+.step-dot.done .c{border-color:var(--teal);background:var(--teal-soft);color:var(--teal)}
+.step-dot.done::before,.step-dot.active::before{background:var(--teal)}
+.panel{padding:34px}
+.panel h2{font-size:26px;margin-bottom:6px}
+.panel .sub{font-size:15px;color:var(--ink-soft);margin-bottom:24px}
+.wizard-nav{display:flex;justify-content:space-between;margin-top:28px;gap:12px}
+/* Calendar */
+.cal-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-head b{font-size:17px;color:var(--teal-dark);text-transform:capitalize}
+.cal-head button{background:none;border:1px solid var(--line);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:16px;color:var(--teal);transition:all .15s}
+.cal-head button:hover:not(:disabled){border-color:var(--teal);background:var(--teal-soft)}
+.cal-head button:disabled{opacity:.3;cursor:default}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .dow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);text-align:center;padding:6px 0}
+.cal .day{aspect-ratio:1;border:1px solid transparent;border-radius:8px;background:none;font-family:'Jost';font-size:15px;color:var(--ink);cursor:pointer;transition:all .12s}
+.cal .day:hover:not(:disabled){background:var(--teal-soft)}
+.cal .day:disabled{color:#c3cdd0;cursor:default}
+.cal .day.sel{background:var(--teal);color:#fff;font-weight:600}
+.slots h3{font-size:16px;font-family:'Jost';font-weight:600;color:var(--ink);margin-bottom:12px}
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-height:300px;overflow:auto;padding-right:4px}
+.slot{padding:10px 4px;border:1px solid var(--line);border-radius:8px;background:#fff;font-family:'Jost';font-size:14px;cursor:pointer;transition:all .12s;color:var(--ink)}
+.slot:hover{border-color:var(--teal)}
+.slot.sel{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:600}
+.slots .empty{font-size:14px;color:var(--ink-soft);padding:20px 0}
+/* Procedures */
+.proc-list{display:grid;gap:10px}
+.proc-cat{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.proc-cat summary{padding:14px 18px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--teal-dark)}
+.proc-cat summary::after{content:"+";font-size:20px;color:var(--gold)}
+.proc-cat[open] summary::after{content:"–"}
+.proc-cat .opts{display:grid;padding:4px 10px 12px}
+.proc-opt{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;font-size:15px;margin:0;font-weight:400}
+.proc-opt:hover{background:var(--teal-soft)}
+.proc-opt input{width:auto;accent-color:var(--teal)}
+.proc-opt.sel{background:var(--teal-soft);font-weight:600;color:var(--teal-dark)}
+/* Payment */
+.deposit-box{background:var(--gold-soft);border:1px solid #e4d5b4;border-radius:10px;padding:16px 20px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.deposit-box b{font-size:22px;font-family:'Cormorant Garamond',serif;color:var(--teal-dark)}
+.deposit-box span{font-size:14px;color:var(--ink-soft)}
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.pay-method{border:1.5px solid var(--line);border-radius:10px;padding:16px;display:flex;align-items:center;gap:12px;cursor:pointer;background:#fff;transition:all .15s;font-weight:400}
+.pay-method:hover{border-color:var(--teal)}
+.pay-method.sel{border-color:var(--teal);background:var(--teal-soft)}
+.pay-method input{width:auto;accent-color:var(--teal)}
+.pay-method b{font-size:16px;display:block}
+.pay-method span{font-size:13px;color:var(--ink-soft)}
+.card-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.card-fields .full{grid-column:1/-1}
+.mp-note{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:18px;font-size:15px;color:var(--ink-soft)}
+.summary{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:22px;display:grid;gap:8px}
+.summary .row{display:flex;justify-content:space-between;gap:14px;font-size:15px}
+.summary .row span:first-child{color:var(--ink-soft)}
+.summary .row b{text-align:right}
+/* Success */
+.success{text-align:center;padding:50px 34px}
+.success .check{width:74px;height:74px;border-radius:50%;background:var(--ok);color:#fff;font-size:36px;display:flex;align-items:center;justify-content:center;margin:0 auto 22px}
+.success h2{font-size:32px;margin-bottom:10px}
+.success p{color:var(--ink-soft);max-width:48ch;margin:0 auto 8px}
+.hidden{display:none}
+@media (max-width:700px){.cal-grid{grid-template-columns:1fr}.pay-methods{grid-template-columns:1fr}.steps{transform:scale(.85)}}
 </style>
 </head>
 <body>
 <header class="site-header">
 <div class="wrap">
-<a href="index.html" class="brand"><img src="assets/logo-teal.png" alt="" class="brand-logo"><span class="name">Dr. Edgardo Sabogal</span><span class="sub">Cirugía Plástica · Estética · Reparadora</span></a>
+<a href="index.html" class="brand"><img src="logo-teal.png" alt="" class="brand-logo"><span class="name">Dr. Edgardo Sabogal</span><span class="sub">Cirugía Plástica · Estética · Reparadora</span></a>
 <nav class="nav">
-<a href="perfil.html" class="active">Trayectoria</a>
+<a href="perfil.html">Trayectoria</a>
 <a href="procedimientos.html">Procedimientos</a>
 <a href="consulta.html">Consulta gratuita</a>
-<a href="reserva.html" class="cta">Reservar turno</a>
+<a href="reserva.html" class="cta active">Reservar turno</a>
 </nav>
 </div>
 </header>
-<section class="profile-hero">
-<div class="wrap">
-<image-slot id="perfil-retrato" shape="rounded" radius="14" placeholder="Retrato del Dr. Sabogal" src="https://s3.sa-east-1.amazonaws.com/doctoraliar.com/doctor/dd1665/dd166515965119e45e892b4a2f54e267_large.jpg"></image-slot>
+<div class="wizard-wrap">
+<div class="wizard-head">
+<img src="logo-teal.png" alt="" style="width:54px;height:38px;object-fit:contain;margin-bottom:6px"><br><span class="eyebrow">Agenda online</span>
+<h1>Reservá tu turno</h1>
+<p>Cuatro pasos simples: elegí fecha y horario, indicá el procedimiento, dejá tu contacto y confirmá con una seña de buena fe.</p>
+</div>
+<div class="steps" id="steps">
+<div class="step-dot" data-s="1"><span class="c">1</span><span>Fecha</span></div>
+<div class="step-dot" data-s="2"><span class="c">2</span><span>Procedimiento</span></div>
+<div class="step-dot" data-s="3"><span class="c">3</span><span>Contacto</span></div>
+<div class="step-dot" data-s="4"><span class="c">4</span><span>Seña</span></div>
+</div>
+<div class="card panel" id="panel">
+<section id="step1">
+<h2>Elegí fecha y horario</h2>
+<p class="sub">Atención de lunes a viernes, de 13:00 a 19:30 h.</p>
+<div class="cal-grid">
 <div>
-<span class="eyebrow">Trayectoria profesional</span>
-<h1>Dr. Edgardo Sabogal Alessio</h1>
-<p>Médico egresado de la Universidad de Buenos Aires (1989). Especialista Universitario en Cirugía Plástica, Estética y Reparadora, con formación previa en Cirugía General, Cirugía Cardiovascular y Flebología: una base quirúrgica poco común que respalda cada procedimiento.</p>
-<div class="ph-stats">
-<div><b>+35</b><span>años de cirugía</span></div>
-<div><b>5</b><span>especialidades</span></div>
-<div><b>2</b><span>premios científicos</span></div>
-<div><b>4</b><span>sociedades médicas</span></div>
+<div class="cal-head"><button id="prevM" aria-label="Mes anterior">‹</button><b id="calTitle"></b><button id="nextM" aria-label="Mes siguiente">›</button></div>
+<div class="cal" id="cal"></div>
 </div>
-</div>
+<div class="slots"><h3 id="slotTitle">Horarios disponibles</h3><div class="slot-grid" id="slotGrid"></div><p class="empty" id="slotEmpty">Primero seleccioná un día en el calendario.</p></div>
 </div>
 </section>
-<section class="section">
-<div class="wrap">
-<span class="eyebrow">Formación académica</span>
-<h2>Títulos y especialidades</h2>
-<div class="timeline">
-<div class="t-item"><span class="year">1989</span><h3>Médico</h3><p>Facultad de Medicina, Universidad de Buenos Aires. Egreso: 10 de noviembre de 1989.</p></div>
-<div class="t-item"><span class="year">1993</span><h3>Especialista en Flebología y Linfología</h3><p>UCA, Ciudad Autónoma de Buenos Aires. 13 de diciembre de 1993.</p></div>
-<div class="t-item"><span class="year">1994</span><h3>Especialista en Cirugía General</h3><p>Ministerio de Salud y Acción Social de la Nación · Asociación Argentina de Cirugía (MAAC).</p></div>
-<div class="t-item"><span class="year">1997</span><h3>Especialista en Cirugía Cardiovascular</h3><p>Universidad del Salvador, Ciudad Autónoma de Buenos Aires.</p></div>
-<div class="t-item"><span class="year">2006</span><h3>Especialista Universitario en Cirugía Plástica, Estética y Reparadora</h3><p>Facultad de Postgrado en Ciencias de la Salud, UCA, Ciudad Autónoma de Buenos Aires.</p></div>
-</div>
-</div>
+<section id="step2" class="hidden">
+<h2>¿Qué procedimiento te interesa?</h2>
+<p class="sub">Elegí una opción. Si no estás seguro, seleccioná “Consulta general”.</p>
+<div class="proc-list" id="procList"></div>
 </section>
-<section class="section" style="padding-top:0">
-<div class="wrap two-col">
-<div>
-<span class="eyebrow">Sociedades</span>
-<h2>Membresías</h2>
-<div class="member-grid">
-<div class="member"><span class="dot"></span><div><b>Sociedad Argentina de Cirugía Plástica, Estética y Reparadora (SACPER)</b><span>Miembro titular · 2014</span></div></div>
-<div class="member"><span class="dot"></span><div><b>Sociedad de Cirugía Plástica de Buenos Aires (SCPBA)</b><span>Miembro titular · 2010</span></div></div>
-<div class="member"><span class="dot"></span><div><b>Colegio Argentino de Cirujanos Cardiovasculares</b><span>Miembro titular · 2002</span></div></div>
-<div class="member"><span class="dot"></span><div><b>Colegio de Cirugía Venosa y Linfática (UCA)</b><span>Miembro titular · 1993</span></div></div>
-</div>
-<div class="logos-strip" style="margin-top:20px;border:1px solid var(--line)"><img src="assets/logos-scpba-sacper.png" alt="SCPBA y SACPER"></div>
-</div>
-<div>
-<span class="eyebrow">Cargos</span>
-<h2>Experiencia hospitalaria</h2>
-<div class="timeline">
-<div class="t-item"><span class="year">1990–1994</span><h3>Residencia completa y Jefe de Residentes de Cirugía General</h3><p>Hospital Naval Buenos Aires.</p></div>
-<div class="t-item"><span class="year">1994–1995</span><h3>Cirujano de Guardia</h3><p>Hospital Naval Buenos Aires "Cirujano Mayor Dr. Pedro Mallo".</p></div>
-<div class="t-item"><span class="year">1996–1997</span><h3>Médico concurrente, Cirugía Cardiovascular</h3><p>Hospital Argerich, con régimen de residente.</p></div>
-<div class="t-item"><span class="year">1996–actualidad</span><h3>Médico cirujano, Urgencias y División Cirugía</h3><p>Hospital Municipal de Agudos Parmenio T. Piñero, CABA.</p></div>
-<div class="t-item"><span class="year">2008–2010</span><h3>Cirugía Plástica y Reparadora</h3><p>Centro Médico Integral Fitz Roy, CABA.</p></div>
-<div class="t-item"><span class="year">2012</span><h3>Cirugía Plástica y Reparadora</h3><p>Hospital Municipal de Oncología María Curie, CABA. Concurrente ad honorem.</p></div>
-</div>
-</div>
-</div>
+<section id="step3" class="hidden">
+<h2>Tus datos de contacto</h2>
+<p class="sub">Usamos estos datos únicamente para confirmar y recordarte el turno.</p>
+<div class="field"><label for="fName">Nombre y apellido</label><input id="fName" type="text" autocomplete="name" placeholder="Ej.: Ana Pérez"><p class="error-msg">Ingresá tu nombre.</p></div>
+<div class="field"><label for="fPhone">Teléfono / WhatsApp</label><input id="fPhone" type="tel" autocomplete="tel" placeholder="Ej.: 11 5555-5555"><p class="error-msg">Ingresá un teléfono válido.</p></div>
+<div class="field"><label for="fMail">Email <span style="font-weight:400;color:var(--ink-soft)">(opcional si dejás teléfono)</span></label><input id="fMail" type="email" autocomplete="email" placeholder="tu@email.com"><p class="error-msg">El email no parece válido.</p></div>
 </section>
-<section class="section" style="padding-top:0">
-<div class="wrap">
-<span class="eyebrow">Reconocimientos</span>
-<h2>Premios</h2>
-<div class="awards">
-<div class="award"><span class="tag">Premio Cirujano Maestro · Dr. Jack Davis</span><h3>“Tumor de Askin — Caso Problema”</h3><p>VI Jornadas Interuniversitarias de Cirugía Plástica "Dr. Francisco Arespacochaga" · UCA y Universidad Nacional de Córdoba · Córdoba, septiembre de 2004.</p></div>
-<div class="award"><span class="tag">Premio Accésit · Dr. Emilio Etala</span><h3>“Actualización del Tratamiento de la Mama Tuberosa”</h3><p>Monografía final, Cátedra de Cirugía Plástica y Reconstructiva · Pontificia Universidad Católica Argentina · Buenos Aires, diciembre de 2006.</p></div>
+<section id="step4" class="hidden">
+<h2>Seña de buena fe</h2>
+<p class="sub">Para confirmar el turno se abona una seña que se descuenta del valor de la primera consulta ($ 50.000). Pacientes de OSDE 410, Swiss Medical y Medicus: tu plan puede cubrir la consulta sin cargo — indicalo en tu consulta gratuita.</p>
+<div class="summary" id="summary"></div>
+<div class="deposit-box"><div><b>$ 30.000 ARS</b><br><span>Seña de buena fe · se descuenta de la consulta</span></div><span>Reembolsable cancelando con 48 h de anticipación</span></div>
+<div class="pay-methods">
+<label class="pay-method" data-pm="mp"><input type="radio" name="pm" value="mp"><div><b>Mercado Pago</b><span>Dinero en cuenta, débito o crédito</span></div></label>
+<label class="pay-method" data-pm="card"><input type="radio" name="pm" value="card"><div><b>Tarjeta de crédito / débito</b><span>Visa, Mastercard, Amex</span></div></label>
+</div>
+<div id="cardForm" class="hidden">
+<div class="card-fields">
+<div class="field full"><label for="ccName">Nombre en la tarjeta</label><input id="ccName" type="text" autocomplete="cc-name" placeholder="Como figura en la tarjeta"><p class="error-msg">Ingresá el nombre.</p></div>
+<div class="field full"><label for="ccNum">Número de tarjeta</label><input id="ccNum" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="19"><p class="error-msg">Ingresá los 16 dígitos.</p></div>
+<div class="field"><label for="ccExp">Vencimiento</label><input id="ccExp" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" maxlength="5"><p class="error-msg">Formato MM/AA.</p></div>
+<div class="field"><label for="ccCvv">Código de seguridad</label><input id="ccCvv" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4"><p class="error-msg">3 o 4 dígitos.</p></div>
 </div>
 </div>
+<div id="mpNote" class="mp-note hidden">Al confirmar, vas a ser redirigido a <b>Mercado Pago</b> para completar el pago de forma segura desde tu cuenta.</div>
 </section>
-<section class="section" style="padding-top:0">
-<div class="wrap">
-<span class="eyebrow">Producción científica</span>
-<h2>Trabajos presentados</h2>
-<div class="papers">
-<div class="paper"><span class="yr">2006</span><div><h3>“Patología Malar — Presentación de dos casos”</h3><p>V Jornada para Médicos Residentes en Cirugía Plástica "Dr. José M. Robles" · SCPBA y SACPER · Buenos Aires.</p></div></div>
-<div class="paper"><span class="yr">2007</span><div><h3>“New Ways for Face and Body Contouring: Growth Factors and Stem Cells”</h3><p>14.º Congreso Internacional IPRAS · Berlín, Alemania.</p></div></div>
-<div class="paper"><span class="yr">2008</span><div><h3>“Facial Rejuvenation: Stem Cells and Growth Factors”</h3><p>XIX Congreso ISAPS · Melbourne, Australia. Autores: Chajchir A., Chajchir G., Peláez A., Sabogal Alessio E.</p></div></div>
-<div class="paper"><span class="yr">2008</span><div><h3>“Body Contouring After Massive Weight Loss”</h3><p>XIX Congreso ISAPS · Melbourne, Australia · Centro Médico Barrancas.</p></div></div>
-<div class="paper"><span class="yr">2008</span><div><h3>“Traumatismos maxilofaciales de tejidos blandos: caso clínico”</h3><p>Co-autor · XXV Jornadas Multidisciplinarias, Hospital P. Piñero · Buenos Aires.</p></div></div>
-<div class="paper"><span class="yr">2012</span><div><h3>“Tratamiento quirúrgico de la ginecomastia severa a pedículo inferior”</h3><p>42.º Congreso Argentino de Cirugía Plástica · SACPER · Buenos Aires.</p></div></div>
-</div>
-</div>
+<section id="stepOk" class="hidden success">
+<div class="check">✓</div>
+<h2>¡Turno confirmado!</h2>
+<p id="okDetail"></p>
+<p>Te enviamos la confirmación con los datos del consultorio. Si necesitás reprogramar, respondé el mensaje de confirmación con 48 h de anticipación.</p>
+<div class="wizard-nav" style="justify-content:center"><a href="index.html" class="btn btn-outline">Volver al inicio</a><a href="consulta.html" class="btn btn-primary">¿Dudas? Consulta gratuita</a></div>
 </section>
-<section class="section" style="padding-top:0">
-<div class="wrap">
-<span class="eyebrow">En acción</span>
-<h2>En quirófano y congresos</h2>
-<div class="work-gallery">
-<image-slot id="w1" shape="rounded" placeholder="Foto en quirófano"></image-slot>
-<image-slot id="w2" shape="rounded" placeholder="Foto en congreso"></image-slot>
-<image-slot id="w3" shape="rounded" placeholder="Foto con pacientes"></image-slot>
+<div class="wizard-nav" id="navBtns">
+<button class="btn btn-ghost" id="btnBack">← Atrás</button>
+<button class="btn btn-primary" id="btnNext" disabled>Continuar →</button>
 </div>
 </div>
-</section>
-<section class="section" style="padding-top:0">
-<div class="wrap">
-<div class="cta-band">
-<h2>¿Querés consultarlo personalmente?</h2>
-<p>Reservá un turno en la agenda online o dejá tu consulta gratuita y el doctor te contactará.</p>
-<div class="row"><a href="reserva.html" class="btn btn-primary">Reservar turno</a><a href="consulta.html" class="btn btn-outline">Consulta gratuita</a></div>
 </div>
-</div>
-</section>
-<footer class="site-footer">
-<div class="wrap">
-<div class="foot-grid">
-<div><img src="assets/logo-white.png" alt="" class="foot-logo"><h3>Dr. Edgardo Sabogal</h3><p>Especialista Universitario en Cirugía Plástica, Estética y Reparadora (UCA). Miembro titular de SACPER y SCPBA.</p></div>
-<div><h3>Navegación</h3><ul><li><a href="reserva.html">Reservar turno</a></li><li><a href="perfil.html">Trayectoria del doctor</a></li><li><a href="consulta.html">Consulta gratuita</a></li><li><a href="procedimientos.html">Procedimientos</a></li></ul></div>
-<div><h3>Contacto</h3><ul><li>Carlos Pellegrini 1175, 6.º C · CABA</li><li>Teléfono: 15-5000-5210</li><li><a href="https://www.instagram.com/dredgardosabogal" target="_blank" rel="noopener">Instagram</a></li><li>Lun a Vie · 13:00–19:30 h</li></ul></div>
-</div>
-<div class="foot-note"><span>© 2026 Consultorio Edgardo Sabogal · M.N. 79653 · Buenos Aires, Argentina</span><span>La información de este sitio no reemplaza la consulta médica.</span></div>
-</div>
-</footer>
+<script src="reserva.js"></script>
 </body>
 </html>

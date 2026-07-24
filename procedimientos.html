@@ -3,176 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Edgardo Sabogal — Cirugía Plástica, Estética y Reparadora</title>
+<title>Procedimientos — Dr. Edgardo Sabogal</title>
 <link rel="stylesheet" href="estilo.css">
 <script src="image-slot.js"></script>
 <style>
-.hero{padding:70px 0 60px}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
-.hero h1{font-size:52px;margin:14px 0 18px}
-.hero p.lead{font-size:19px;color:var(--ink-soft);max-width:52ch}
-.hero-quote{margin-top:26px;padding-left:18px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--teal-dark);max-width:46ch}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-.hero-photo{position:relative}
-.hero-photo{min-width:0}.hero-photo .main{width:100%;height:480px}
-.hero-photo .mark{position:absolute;top:16px;left:16px;width:54px;height:38px;object-fit:contain;z-index:2;filter:drop-shadow(0 1px 4px rgba(0,0,0,.35));pointer-events:none}
-.hero-photo .badge{position:absolute;left:-18px;bottom:26px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-lg);padding:12px 18px;display:flex;align-items:center;gap:10px}
-.hero-photo .badge b{font-size:15px;color:var(--teal-dark)}
-.hero-photo .badge span{font-size:13px;color:var(--ink-soft)}
-.section{padding:64px 0}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap}
-.section-head h2{font-size:38px;margin-top:8px}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.gallery figure{margin:0}
-.gallery .ph{height:250px;min-width:0;width:100%}
-.gallery figcaption{font-size:14px;color:var(--ink-soft);margin-top:8px}
-.reviews{background:var(--teal-soft);border-radius:16px;padding:48px 40px}
-.g-score{display:flex;align-items:center;gap:16px;margin-bottom:30px;flex-wrap:wrap}
-.g-score .num{font-size:46px;font-family:'Jost',sans-serif;font-weight:600;color:var(--teal-dark);line-height:1}
-.stars{color:#f4b400;font-size:20px;letter-spacing:2px}
-.g-score .meta{font-size:14px;color:var(--ink-soft)}
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.review{background:#fff;border-radius:10px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
-.review .who{display:flex;align-items:center;gap:10px}
-.review .avatar{width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px}
-.review .who b{font-size:15px}
-.review .who span{display:block;font-size:12px;color:var(--ink-soft)}
-.review p{font-size:15px;color:var(--ink-soft)}
-.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.path{padding:34px 28px;display:flex;flex-direction:column;gap:12px;transition:transform .18s,box-shadow .18s;position:relative}
-.path:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.path .num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold);line-height:1}
-.path h3{font-size:25px}
-.path p{font-size:15px;color:var(--ink-soft);flex:1}
-.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.proc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}
-.proc h3{font-size:21px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
-.proc h3::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none}
-.proc ul{list-style:none;display:grid;gap:6px}
-.proc li{font-size:15px;color:var(--ink-soft)}
-.ba-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;position:relative}
-.ba .tag{position:absolute;top:10px;left:10px;background:rgba(15,61,72,.85);color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;z-index:2;pointer-events:none}
-.ba .tag.after{left:calc(50% + 13px)}
-.ba image-slot{height:210px;min-width:0}
-.ba-note{font-size:13px;color:var(--ink-soft);margin-top:16px}
-.map-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
-.map-grid iframe{width:100%;height:100%;min-height:340px;border:0;border-radius:12px;filter:saturate(.85)}
-.contact-card{padding:34px;display:flex;flex-direction:column;gap:18px;justify-content:center}
-.contact-line{display:flex;align-items:center;gap:14px}
-.contact-line .ico{width:42px;height:42px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;flex:none}
-.contact-line b{display:block;font-size:16px;color:var(--teal-dark)}
-.contact-line span{font-size:14px;color:var(--ink-soft)}
-@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-photo .main{height:380px}.gallery,.review-grid,.paths,.proc-grid,.ba-grid{grid-template-columns:1fr}.map-grid{grid-template-columns:1fr}.hero h1{font-size:38px}}
+.proc-hero{background:var(--teal-dark);color:#dceef2;padding:64px 0 56px}
+.proc-hero h1{color:#fff;font-size:46px;margin:10px 0 14px}
+.proc-hero p{color:#b8d2d8;font-size:18px;max-width:64ch}
+.proc-hero .idx{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.proc-hero .idx a{white-space:nowrap;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#dceef2;padding:8px 18px;border-radius:999px;font-size:14px}
+.proc-hero .idx a:hover{background:rgba(255,255,255,.2);color:#fff}
+.area{padding:56px 0;border-bottom:1px solid var(--line)}
+.area:last-of-type{border-bottom:none}
+.proc-reviews{background:var(--teal-soft);padding:26px 0}
+.proc-reviews .wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:space-between}
+.proc-reviews .score{display:flex;align-items:center;gap:12px}
+.proc-reviews .score b{font-size:34px;font-weight:600;color:var(--teal-dark);line-height:1}
+.proc-reviews .score .stars{color:#f4b400;font-size:16px;letter-spacing:2px}
+.proc-reviews .score span{display:block;font-size:13px;color:var(--ink-soft)}
+.proc-reviews .quotes{display:flex;gap:18px;flex:1;min-width:280px}
+.proc-reviews .q{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:var(--shadow);font-size:14px;color:var(--ink-soft);flex:1}
+.proc-reviews .q b{display:block;font-size:13px;color:var(--teal-dark);margin-top:6px;font-weight:600}
+@media (max-width:900px){.proc-reviews .quotes{flex-direction:column}}
+.area .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:start}
+.area.flip .wrap{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.area.flip .txt{order:2}
+.area h2{font-size:34px;margin:6px 0 14px}
+.area .lead{color:var(--ink-soft);margin-bottom:20px;max-width:56ch}
+.tx-list{display:grid;gap:10px}
+.tx{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.tx b{color:var(--teal-dark);font-size:16px}
+.tx span{display:block;font-size:14px;color:var(--ink-soft);margin-top:2px}
+.area image-slot{width:100%;height:340px;min-width:0}
+.area .ph-hint{font-size:13px;color:var(--ink-soft);margin-top:8px;font-style:italic}
+.cta-band{background:var(--teal-soft);border-radius:16px;padding:44px;text-align:center;margin:60px auto}
+.cta-band h2{margin-bottom:10px}
+.cta-band p{color:var(--ink-soft);max-width:52ch;margin:0 auto 24px}
+.cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+@media (max-width:860px){.area .wrap,.area.flip .wrap{grid-template-columns:1fr}.area.flip .txt{order:0}.proc-hero h1{font-size:36px}}
 </style>
 </head>
 <body>
 <header class="site-header">
 <div class="wrap">
-<a href="index.html" class="brand"><img src="assets/logo-teal.png" alt="" class="brand-logo"><span class="name">Dr. Edgardo Sabogal</span><span class="sub">Cirugía Plástica · Estética · Reparadora</span></a>
+<a href="index.html" class="brand"><img src="logo-teal.png" alt="" class="brand-logo"><span class="name">Dr. Edgardo Sabogal</span><span class="sub">Cirugía Plástica · Estética · Reparadora</span></a>
 <nav class="nav">
 <a href="perfil.html">Trayectoria</a>
-<a href="procedimientos.html">Procedimientos</a>
+<a href="procedimientos.html" class="active">Procedimientos</a>
 <a href="consulta.html">Consulta gratuita</a>
 <a href="reserva.html" class="cta">Reservar turno</a>
 </nav>
 </div>
 </header>
-<section class="hero">
+<section class="proc-hero">
 <div class="wrap">
-<div class="reveal">
-<span class="eyebrow">Consultorio Edgardo Sabogal · Buenos Aires</span>
-<h1>Cirugía plástica con criterio médico y trato humano</h1>
-<p class="lead">Más de 35 años de trayectoria quirúrgica. Especialista universitario en Cirugía Plástica, Estética y Reparadora (UCA), miembro titular de SACPER y de la Sociedad de Cirugía Plástica de Buenos Aires.</p>
-<p class="hero-quote">“Agradar y agradarse con el aspecto físico es un componente fundamental de un concepto amplio de salud y bienestar.”</p>
-<div class="hero-actions">
-<a href="reserva.html" class="btn btn-primary">Reservar un turno</a>
-<a href="perfil.html" class="btn btn-outline">Ver trayectoria</a>
-<a href="consulta.html" class="btn btn-ghost">Consulta gratuita</a>
-</div>
-</div>
-<div class="hero-photo reveal" style="animation-delay:.15s">
-<img src="assets/logo-white.png" alt="" class="mark"><image-slot id="hero-doctor" class="main" shape="rounded" radius="16" placeholder="Foto del Dr. Sabogal" src="https://s3.sa-east-1.amazonaws.com/doctoraliar.com/doctor/dd1665/dd166515965119e45e892b4a2f54e267_large.jpg"></image-slot>
+<span class="eyebrow">Procedimientos</span>
+<h1>Áreas de tratamiento</h1>
+<p>Cirugía y medicina estética con indicación médica precisa: cada procedimiento comienza con una evaluación honesta de si es lo adecuado para vos. Explorá las áreas y reservá una consulta para conversar tu caso.</p>
+<div class="idx">
+<a href="#rostro">Rostro</a><a href="#cabello">Cabello</a><a href="#mamas">Mamas</a><a href="#contorno">Contorno corporal</a><a href="#piernas">Piernas</a><a href="#ginecoestetica">Ginecoestética</a>
 </div>
 </div>
 </section>
-<section class="section" id="procedimientos">
+<section class="proc-reviews">
 <div class="wrap">
-<div class="section-head"><div><span class="eyebrow">Procedimientos</span><h2>Especialidades y tratamientos</h2></div><a href="procedimientos.html" class="btn btn-primary">Ver en detalle</a></div>
-<div class="proc-grid">
-<div class="proc"><h3>Rostro</h3><ul><li>Lifting cervicofacial</li><li>Blefaroplastia (párpados)</li><li>Otoplastia (orejas)</li><li>Toxina botulínica</li><li>Bioestimuladores: Radiesse®, Sculptra®, Profhilo®</li><li>Rellenos con ácido hialurónico</li><li>Láser de CO₂ para la piel</li></ul></div>
-<div class="proc"><h3>Mamas</h3><ul><li>Mastoplastia de aumento</li><li>Reducción mamaria</li><li>Mastopexia (levantamiento)</li><li>Tratamiento de la ginecomastia</li></ul></div>
-<div class="proc"><h3>Contorno corporal</h3><ul><li>Lipoescultura</li><li>Abdominoplastia</li><li>Lipofilling de glúteos</li><li>Aumento de pantorrillas con prótesis</li></ul></div>
-<div class="proc"><h3>Cabello</h3><ul><li>Implante capilar</li></ul></div>
-<div class="proc"><h3>Piernas</h3><ul><li>Tratamiento de várices</li></ul></div>
-<div class="proc"><h3>Ginecoestética</h3><ul><li>Vaginoplastia quirúrgica</li><li>Vaginoplastia con láser endovaginal de CO₂</li></ul></div>
+<div class="score"><b>110</b><div><div class="stars">★★★★★</div><span>opiniones verificadas · <a href="https://www.doctoraliar.com/perfil/edgardo-paulo-sabogal-alessio" target="_blank" rel="noopener">Ver en Doctoralia</a></span></div></div>
+<div class="quotes">
+<div class="q">“Excelente profesional, predispuesto y atento. Pendiente del paciente como pocos.”<b>Yanina M. · Reducción mamaria · ✓ verificada</b></div>
+<div class="q">“El doctor da recomendaciones muy buenas y resultados naturales. La recuperación rápida y sin molestias.”<b>V.F. · Lipoaspiración · ✓ verificada</b></div>
+<div class="q">“Profesionalismo, confianza, contención, dedicación y ante todo respeto.”<b>CVL · Mastopexia · ✓ verificada</b></div>
 </div>
 </div>
 </section>
-<section class="section" id="galeria">
+<section class="area" id="rostro">
 <div class="wrap">
-<div class="section-head"><div><span class="eyebrow">El consultorio</span><h2>El doctor en su trabajo</h2></div></div>
-<div class="gallery">
-<image-slot id="g1" class="ph" shape="rounded" placeholder="Foto en quirófano"></image-slot>
-<image-slot id="g2" class="ph" shape="rounded" placeholder="Foto en consultorio"></image-slot>
-<image-slot id="g3" class="ph" shape="rounded" placeholder="Foto del equipo / congreso"></image-slot>
+<div class="txt">
+<span class="eyebrow">Rostro</span>
+<h2>Rejuvenecimiento y armonía facial</h2>
+<p class="lead">Desde cirugía facial hasta tratamientos mínimamente invasivos, según lo que cada rostro necesita.</p>
+<div class="tx-list">
+<div class="tx"><b>Lifting cervicofacial</b><span>Reposiciona los tejidos del rostro y cuello para un resultado natural y duradero.</span></div>
+<div class="tx"><b>Blefaroplastia</b><span>Cirugía de párpados: corrige el exceso de piel y las bolsas, rejuvenece la mirada.</span></div>
+<div class="tx"><b>Otoplastia</b><span>Corrección de la forma o proyección de las orejas.</span></div>
+<div class="tx"><b>Toxina botulínica</b><span>Atenúa arrugas de expresión en frente, entrecejo y patas de gallo.</span></div>
+<div class="tx"><b>Bioestimuladores</b><span>Radiesse® (hidroxiapatita de calcio), Sculptra® (ácido poli-L-láctico), Profhilo® y Long Lasting® (ácido hialurónico): estimulan el colágeno propio.</span></div>
+<div class="tx"><b>Rellenos con ácido hialurónico</b><span>Restituyen volumen y perfilan labios, pómulos y surcos.</span></div>
+<div class="tx"><b>Láser de CO₂</b><span>Renovación de la piel: textura, manchas y cicatrices.</span></div>
+</div>
+</div>
+<div>
+<image-slot id="proc-rostro" shape="rounded" radius="14" placeholder="Foto: tratamiento facial" style="width: 426px; height: 453px"></image-slot>
 </div>
 </div>
 </section>
-<section class="section">
+<section class="area flip" id="cabello">
 <div class="wrap">
-<div class="reviews">
-<div class="section-head" style="margin-bottom:18px"><div><span class="eyebrow">Opiniones verificadas · Doctoralia</span><h2>Lo que dicen los pacientes</h2></div></div>
-<div class="g-score"><span class="num">110</span><div><div class="stars">★★★★★</div><div class="meta">opiniones verificadas · <a href="https://www.doctoraliar.com/perfil/edgardo-paulo-sabogal-alessio" target="_blank" rel="noopener">Ver todas en Doctoralia</a></div></div></div>
-<div class="review-grid">
-<div class="review"><div class="who"><div class="avatar">M</div><div><b>MRM</b><span>Abdominoplastia · jun 2026 · ✓ verificada</span></div></div><p>“Excelente profesional. Tanto la cirugía como lo previo y lo posterior; todo tratado con profesionalismo y excelente calidad humana.”</p></div>
-<div class="review"><div class="who"><div class="avatar">V</div><div><b>Valentina R.</b><span>Aumento mamario · dic 2025 · ✓ verificada</span></div></div><p>“Desde la primera consulta me sentí muy cómoda y contenida… el resultado es hermoso y la cicatriz quedó súper prolija.”</p></div>
-<div class="review"><div class="who"><div class="avatar">M</div><div><b>M.A.E</b><span>Lifting facial · may 2025 · ✓ verificada</span></div></div><p>“Tengo 70 y nadie me da más de 60. El dr es un genio y es de mi total confianza.”</p></div>
+<div class="txt">
+<span class="eyebrow">Cabello</span>
+<h2>Implante capilar</h2>
+<p class="lead">Restauración capilar con técnica quirúrgica, para recuperar densidad con un resultado definitivo y de aspecto natural.</p>
+<div class="tx-list">
+<div class="tx"><b>Implante capilar</b><span>Evaluación de la zona donante y diseño de la línea de implantación en consulta.</span></div>
 </div>
+</div>
+<div>
+<image-slot id="proc-cabello" shape="rounded" radius="14" placeholder="Foto: implante capilar" style="width: 434px; height: 477px"></image-slot>
 </div>
 </div>
 </section>
-<section class="section" id="antes-despues">
+<section class="area" id="mamas">
 <div class="wrap">
-<div class="section-head"><div><span class="eyebrow">Resultados</span><h2>Antes y después</h2></div></div>
-<div class="ba-grid">
-<div class="ba"><span class="tag">Antes</span><span class="tag after">Después</span><image-slot id="ba1a" shape="rounded" placeholder="Antes"></image-slot><image-slot id="ba1b" shape="rounded" placeholder="Después"></image-slot></div>
-<div class="ba"><span class="tag">Antes</span><span class="tag after">Después</span><image-slot id="ba2a" shape="rounded" placeholder="Antes"></image-slot><image-slot id="ba2b" shape="rounded" placeholder="Después"></image-slot></div>
-<div class="ba"><span class="tag">Antes</span><span class="tag after">Después</span><image-slot id="ba3a" shape="rounded" placeholder="Antes"></image-slot><image-slot id="ba3b" shape="rounded" placeholder="Después"></image-slot></div>
+<div class="txt">
+<span class="eyebrow">Mamas</span>
+<h2>Cirugía mamaria</h2>
+<p class="lead">Aumento, reducción y elevación, con especial experiencia en casos complejos como mama tuberosa y ginecomastia — temas de sus trabajos premiados.</p>
+<div class="tx-list">
+<div class="tx"><b>Mastoplastia de aumento</b><span>Aumento con implantes, eligiendo juntos tamaño y proyección.</span></div>
+<div class="tx"><b>Reducción mamaria</b><span>Alivia molestias físicas y mejora la proporción corporal.</span></div>
+<div class="tx"><b>Mastopexia</b><span>Levantamiento mamario, con o sin implantes.</span></div>
+<div class="tx"><b>Ginecomastia</b><span>Tratamiento quirúrgico del desarrollo mamario en el hombre.</span></div>
 </div>
-<p class="ba-note">Fotografías publicadas con consentimiento expreso de los pacientes. Los resultados varían según cada caso.</p>
 </div>
-</section>
-<section class="section" id="ubicacion">
-<div class="wrap">
-<div class="section-head"><div><span class="eyebrow">Ubicación y contacto</span><h2>Dónde encontrarnos</h2></div></div>
-<div class="map-grid">
-<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-58.3900%2C-34.6010%2C-58.3760%2C-34.5900&layer=mapnik&marker=-34.5953%2C-58.3830" title="Mapa del consultorio" loading="lazy"></iframe>
-<div class="contact-card card">
-<div class="contact-line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"></path></svg></span><div><b>Consultorio</b><span>Carlos Pellegrini 1175, Piso 6.º C · C1009ABW · Ciudad Autónoma de Buenos Aires</span></div></div>
-<div class="contact-line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"></path></svg></span><div><b>Teléfono</b><span>15-5000-5210</span></div></div>
-<div class="contact-line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 2h-11A4.5 4.5 0 0 0 2 6.5v11A4.5 4.5 0 0 0 6.5 22h11a4.5 4.5 0 0 0 4.5-4.5v-11A4.5 4.5 0 0 0 17.5 2zM12 7.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4zm0 1.8a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8zm5-3.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"></path></svg></span><div><b>Instagram</b><span><a href="https://www.instagram.com/dredgardosabogal" target="_blank" rel="noopener">@dredgardosabogal</a></span></div></div>
-<div class="contact-line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4zm-1 13-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6z"></path></svg></span><div><b>Coberturas</b><span>OSDE 410, Swiss Medical y Medicus (según plan) · también consultas privadas</span></div></div>
-<div class="contact-line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 10.6 3.5 2-.7 1.3L11 13.5V7h2z"></path></svg></span><div><b>Horarios de atención</b><span>Lunes a viernes · 13:00 a 19:30 h</span></div></div>
-<a href="reserva.html" class="btn btn-primary" style="align-self:start">Reservar turno</a>
-</div>
+<div>
+<image-slot id="proc-mamas" shape="rounded" radius="14" placeholder="Foto: quirófano" style="width: 432px; height: 496px"></image-slot>
 </div>
 </div>
 </section>
-<section class="section" id="opciones">
+<section class="area flip" id="contorno">
 <div class="wrap">
-<div class="section-head"><div><span class="eyebrow">¿Cómo empezar?</span><h2>Tres caminos simples</h2></div></div>
-<div class="paths">
-<a class="path card" href="reserva.html"><span class="num">01</span><h3>Reservar un turno</h3><p>Elegí fecha y horario en la agenda, indicá el procedimiento y confirmá con una seña de buena fe. Todo online, en menos de 3 minutos.</p><span class="btn btn-primary">Ir a la agenda</span></a>
-<a class="path card" href="perfil.html"><span class="num">02</span><h3>Conocer al doctor</h3><p>Formación, títulos, cargos hospitalarios, premios y trabajos científicos: la trayectoria completa del Dr. Sabogal.</p><span class="btn btn-outline">Ver trayectoria</span></a>
-<a class="path card" href="consulta.html"><span class="num">03</span><h3>Consulta gratuita</h3><p>Dejá tu nombre, teléfono y tus dudas. El doctor te contacta personalmente para responderte, sin costo ni compromiso.</p><span class="btn btn-outline">Hacer una consulta</span></a>
+<div class="txt">
+<span class="eyebrow">Contorno corporal</span>
+<h2>Remodelación del cuerpo</h2>
+<p class="lead">Redefinición del contorno con técnicas quirúrgicas y con grasa propia, incluida la experiencia en remodelación tras grandes descensos de peso.</p>
+<div class="tx-list">
+<div class="tx"><b>Lipoescultura</b><span>Extracción y remodelación de depósitos de grasa localizada.</span></div>
+<div class="tx"><b>Abdominoplastia</b><span>Corrige el exceso de piel y la flacidez abdominal, con reparación muscular si hace falta.</span></div>
+<div class="tx"><b>Lipofilling de glúteos</b><span>Aumento con grasa propia, sin implantes.</span></div>
+<div class="tx"><b>Aumento de pantorrillas</b><span>Con prótesis, para piernas más proporcionadas.</span></div>
+</div>
+</div>
+<div>
+<image-slot id="proc-contorno" shape="rounded" radius="14" placeholder="Foto: marcación corporal" style="width: 415px; height: 552px"></image-slot>
 </div>
 </div>
 </section>
-<footer class="site-footer">
+<section class="area" id="piernas">
+<div class="wrap">
+<div class="txt">
+<span class="eyebrow">Piernas</span>
+<h2>Tratamiento de várices</h2>
+<p class="lead">Con la doble formación del doctor como especialista en Flebología y Linfología y en Cirugía Cardiovascular, el tratamiento de várices se aborda con criterio vascular, no solo estético.</p>
+<div class="tx-list">
+<div class="tx"><b>Tratamiento de várices</b><span>Evaluación vascular completa y tratamiento según el tipo y grado de las várices.</span></div>
+</div>
+</div>
+<div>
+<image-slot id="proc-piernas" shape="rounded" radius="14" placeholder="Foto: evaluación vascular" style="width: 441px; height: 440px"></image-slot>
+</div>
+</div>
+</section>
+<section class="area flip" id="ginecoestetica">
+<div class="wrap">
+<div class="txt">
+<span class="eyebrow">Ginecoestética</span>
+<h2>Salud íntima femenina</h2>
+<p class="lead">Procedimientos funcionales y estéticos, tratados con absoluta confidencialidad y en un marco médico.</p>
+<div class="tx-list">
+<div class="tx"><b>Vaginoplastia quirúrgica</b><span>Corrección quirúrgica según indicación médica.</span></div>
+<div class="tx"><b>Vaginoplastia con láser endovaginal de CO₂</b><span>Alternativa sin cirugía, ambulatoria.</span></div>
+</div>
+</div>
+<div>
+<image-slot id="proc-gineco" shape="rounded" radius="14" placeholder="Foto: consultorio / equipo láser"></image-slot>
+</div>
+</div>
+</section>
+<div class="wrap"><div class="cta-band">
+<h2>¿Cuál es el procedimiento adecuado para vos?</h2>
+<p>Esa respuesta se construye en la consulta. Reservá un turno o dejá tu duda sin costo y el doctor te orienta.</p>
+<div class="row"><a href="reserva.html" class="btn btn-primary">Reservar turno</a><a href="consulta.html" class="btn btn-outline">Consulta gratuita</a></div>
+</div></div>
+<footer class="site-footer" style="margin-top:0">
 <div class="wrap">
 <div class="foot-grid">
-<div><img src="assets/logo-white.png" alt="" class="foot-logo"><h3>Dr. Edgardo Sabogal</h3><p>Especialista Universitario en Cirugía Plástica, Estética y Reparadora (UCA). Miembro titular de SACPER y SCPBA.</p><div class="logos-strip" style="margin-top:16px"><img src="assets/logos-scpba-sacper.png" alt="SCPBA y SACPER"></div></div>
+<div><img src="logo-white.png" alt="" class="foot-logo"><h3>Dr. Edgardo Sabogal</h3><p>Especialista Universitario en Cirugía Plástica, Estética y Reparadora (UCA). Miembro titular de SACPER y SCPBA.</p></div>
 <div><h3>Navegación</h3><ul><li><a href="reserva.html">Reservar turno</a></li><li><a href="perfil.html">Trayectoria del doctor</a></li><li><a href="consulta.html">Consulta gratuita</a></li><li><a href="procedimientos.html">Procedimientos</a></li></ul></div>
 <div><h3>Contacto</h3><ul><li>Carlos Pellegrini 1175, 6.º C · CABA</li><li>Teléfono: 15-5000-5210</li><li><a href="https://www.instagram.com/dredgardosabogal" target="_blank" rel="noopener">Instagram</a></li><li>Lun a Vie · 13:00–19:30 h</li></ul></div>
 </div>
