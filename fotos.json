@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulta gratuita — Dr. Edgardo Sabogal</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+.consult-wrap{max-width:1000px;margin:0 auto;padding:56px 24px 80px;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.consult-info h1{font-size:40px;margin:10px 0 14px}
+.consult-info p{color:var(--ink-soft)}
+.how{margin-top:28px;display:grid;gap:16px}
+.how-item{display:flex;gap:14px;align-items:start}
+.how-item .n{width:34px;height:34px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-weight:600;display:flex;align-items:center;justify-content:center;flex:none;font-size:15px}
+.how-item b{color:var(--teal-dark)}
+.how-item span{display:block;font-size:14px;color:var(--ink-soft)}
+.consult-quote{margin-top:30px;padding:20px 22px;background:var(--gold-soft);border-radius:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--teal-dark)}
+.consult-form{padding:34px}
+.consult-form h2{font-size:24px;margin-bottom:4px}
+.consult-form .sub{font-size:14px;color:var(--ink-soft);margin-bottom:22px}
+.priv{font-size:13px;color:var(--ink-soft);margin-top:14px}
+.success{text-align:center;padding:40px 20px;display:none}
+.success .check{width:70px;height:70px;border-radius:50%;background:var(--ok);color:#fff;font-size:34px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success h2{font-size:28px;margin-bottom:8px}
+.success p{color:var(--ink-soft);margin-bottom:20px}
+@media (max-width:860px){.consult-wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap">
+<a href="index.html" class="brand"><img src="assets/logo-teal.png" alt="" class="brand-logo"><span class="name">Dr. Edgardo Sabogal</span><span class="sub">Cirugía Plástica · Estética · Reparadora</span></a>
+<nav class="nav">
+<a href="perfil.html">Trayectoria</a>
+<a href="procedimientos.html">Procedimientos</a>
+<a href="consulta.html" class="active">Consulta gratuita</a>
+<a href="reserva.html" class="cta">Reservar turno</a>
+</nav>
+</div>
+</header>
+<div class="consult-wrap">
+<div class="consult-info">
+<img src="assets/logo-teal.png" alt="" style="width:54px;height:38px;object-fit:contain;margin-bottom:10px"><br><span class="eyebrow">Sin costo · sin compromiso</span>
+<h1>Consulta gratuita</h1>
+<p>¿Tenés dudas sobre un procedimiento, la recuperación o si sos candidato? Dejá tu consulta y el Dr. Sabogal te contactará personalmente para responderte.</p>
+<div class="how">
+<div class="how-item"><span class="n">1</span><div><b>Dejá tus datos y tu duda</b><span>Nombre, teléfono y lo que quieras preguntar.</span></div></div>
+<div class="how-item"><span class="n">2</span><div><b>El doctor la revisa</b><span>Tu consulta llega directamente al consultorio.</span></div></div>
+<div class="how-item"><span class="n">3</span><div><b>Te contactamos</b><span>Por WhatsApp o llamada, dentro de las 48 h hábiles.</span></div></div>
+</div>
+<p class="consult-quote">“Agradar y agradarse con el aspecto físico es un componente fundamental de un concepto amplio de salud y bienestar.”</p>
+</div>
+<div class="consult-form card">
+<form id="cform" novalidate>
+<h2>Contanos tu consulta</h2>
+<p class="sub">Todos los datos se tratan con confidencialidad médica.</p>
+<div class="field"><label for="cName">Nombre y apellido</label><input id="cName" type="text" autocomplete="name" placeholder="Ej.: Ana Pérez"><p class="error-msg">Ingresá tu nombre.</p></div>
+<div class="field"><label for="cPhone">Teléfono / WhatsApp</label><input id="cPhone" type="tel" autocomplete="tel" placeholder="Ej.: 11 5555-5555"><p class="error-msg">Ingresá un teléfono válido.</p></div>
+<div class="field"><label for="cTopic">Tema <span style="font-weight:400;color:var(--ink-soft)">(opcional)</span></label><select id="cTopic"><option value="">Elegí un tema…</option><option>Rostro</option><option>Mamas</option><option>Contorno corporal</option><option>Cabello</option><option>Piernas / várices</option><option>Ginecoestética</option><option>Otro</option></select></div>
+<div class="field"><label for="cMsg">Tu duda</label><textarea id="cMsg" rows="5" placeholder="Contanos qué te gustaría saber…"></textarea><p class="error-msg">Contanos brevemente tu duda.</p></div>
+<button type="submit" class="btn btn-primary" style="width:100%">Enviar consulta</button>
+<p class="priv">Al enviar aceptás ser contactado por el consultorio. No compartimos tus datos con terceros.</p>
+</form>
+<div class="success" id="csuccess">
+<div class="check">✓</div>
+<h2>¡Consulta enviada!</h2>
+<p>Gracias, <b id="csName"></b>. El Dr. Sabogal o su equipo te contactarán dentro de las próximas 48 h hábiles.</p>
+<a href="index.html" class="btn btn-outline">Volver al inicio</a>
+</div>
+</div>
+</div>
+<script>
+const f=document.getElementById('cform');
+f.addEventListener('submit',e=>{
+e.preventDefault();
+let ok=true;
+const check=(id,fn)=>{const el=document.getElementById(id),v=fn(el.value);el.closest('.field').classList.toggle('invalid',!v);if(!v)ok=false};
+check('cName',v=>v.trim().length>1);
+check('cPhone',v=>v.replace(/\D/g,'').length>=8);
+check('cMsg',v=>v.trim().length>4);
+if(!ok)return;
+document.getElementById('csName').textContent=document.getElementById('cName').value.trim();
+f.style.display='none';
+document.getElementById('csuccess').style.display='block';
+});
+</script>
+</body>
+</html>

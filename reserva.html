@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trayectoria — Dr. Edgardo Sabogal</title>
+<link rel="stylesheet" href="estilo.css">
+<script src="image-slot.js"></script>
+<style>
+.profile-hero{background:var(--teal-dark);color:#dceef2;padding:70px 0 60px}
+.profile-hero .wrap{display:grid;grid-template-columns:280px minmax(0,1fr);gap:48px;align-items:center}
+.profile-hero h1{color:#fff;font-size:46px;margin:10px 0 14px}
+.profile-hero p{color:#b8d2d8;font-size:18px;max-width:60ch}
+.profile-hero image-slot{width:280px;height:340px}
+.ph-stats{display:flex;gap:36px;margin-top:26px;flex-wrap:wrap}
+.ph-stats b{font-family:'Cormorant Garamond',serif;font-size:34px;color:#fff;display:block;line-height:1}
+.ph-stats span{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9dbcc3}
+.section{padding:60px 0}
+.section h2{font-size:34px;margin:6px 0 30px}
+.timeline{position:relative;padding-left:28px;display:grid;gap:26px}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.t-item{position:relative}
+.t-item::before{content:"";position:absolute;left:-28px;top:7px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+.t-item .year{font-size:13px;letter-spacing:.15em;color:var(--gold);font-weight:600}
+.t-item h3{font-size:21px;margin:2px 0 4px}
+.t-item p{font-size:15px;color:var(--ink-soft)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.member-grid{display:grid;gap:14px}
+.member{display:flex;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.member .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);margin-top:7px;flex:none}
+.member b{color:var(--teal-dark)}
+.member span{display:block;font-size:14px;color:var(--ink-soft)}
+.work-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:10px}
+.work-gallery image-slot{height:220px;min-width:0;width:100%}
+.awards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.award{background:#fff;border:1px solid var(--line);border-left:none;border-radius:10px;padding:22px;position:relative;overflow:hidden}
+.award::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
+.award .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.award h3{font-size:19px;margin:6px 0 4px}
+.award p{font-size:14px;color:var(--ink-soft)}
+.papers{display:grid;gap:0}
+.paper{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.paper .yr{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold)}
+.paper h3{font-size:18px;margin-bottom:3px}
+.paper p{font-size:14px;color:var(--ink-soft)}
+.cta-band{background:var(--teal-soft);border-radius:16px;padding:44px;text-align:center}
+.cta-band h2{margin-bottom:10px}
+.cta-band p{color:var(--ink-soft);max-width:52ch;margin:0 auto 24px}
+.cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+@media (max-width:860px){.profile-hero .wrap,.two-col,.awards{grid-template-columns:1fr}.work-gallery{grid-template-columns:1fr}.profile-hero image-slot{width:100%}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap">
+<a href="index.html" class="brand"><img src="assets/logo-teal.png" alt="" class="brand-logo"><span class="name">Dr. Edgardo Sabogal</span><span class="sub">Cirugía Plástica · Estética · Reparadora</span></a>
+<nav class="nav">
+<a href="perfil.html" class="active">Trayectoria</a>
+<a href="procedimientos.html">Procedimientos</a>
+<a href="consulta.html">Consulta gratuita</a>
+<a href="reserva.html" class="cta">Reservar turno</a>
+</nav>
+</div>
+</header>
+<section class="profile-hero">
+<div class="wrap">
+<image-slot id="perfil-retrato" shape="rounded" radius="14" placeholder="Retrato del Dr. Sabogal" src="https://s3.sa-east-1.amazonaws.com/doctoraliar.com/doctor/dd1665/dd166515965119e45e892b4a2f54e267_large.jpg"></image-slot>
+<div>
+<span class="eyebrow">Trayectoria profesional</span>
+<h1>Dr. Edgardo Sabogal Alessio</h1>
+<p>Médico egresado de la Universidad de Buenos Aires (1989). Especialista Universitario en Cirugía Plástica, Estética y Reparadora, con formación previa en Cirugía General, Cirugía Cardiovascular y Flebología: una base quirúrgica poco común que respalda cada procedimiento.</p>
+<div class="ph-stats">
+<div><b>+35</b><span>años de cirugía</span></div>
+<div><b>5</b><span>especialidades</span></div>
+<div><b>2</b><span>premios científicos</span></div>
+<div><b>4</b><span>sociedades médicas</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap">
+<span class="eyebrow">Formación académica</span>
+<h2>Títulos y especialidades</h2>
+<div class="timeline">
+<div class="t-item"><span class="year">1989</span><h3>Médico</h3><p>Facultad de Medicina, Universidad de Buenos Aires. Egreso: 10 de noviembre de 1989.</p></div>
+<div class="t-item"><span class="year">1993</span><h3>Especialista en Flebología y Linfología</h3><p>UCA, Ciudad Autónoma de Buenos Aires. 13 de diciembre de 1993.</p></div>
+<div class="t-item"><span class="year">1994</span><h3>Especialista en Cirugía General</h3><p>Ministerio de Salud y Acción Social de la Nación · Asociación Argentina de Cirugía (MAAC).</p></div>
+<div class="t-item"><span class="year">1997</span><h3>Especialista en Cirugía Cardiovascular</h3><p>Universidad del Salvador, Ciudad Autónoma de Buenos Aires.</p></div>
+<div class="t-item"><span class="year">2006</span><h3>Especialista Universitario en Cirugía Plástica, Estética y Reparadora</h3><p>Facultad de Postgrado en Ciencias de la Salud, UCA, Ciudad Autónoma de Buenos Aires.</p></div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap two-col">
+<div>
+<span class="eyebrow">Sociedades</span>
+<h2>Membresías</h2>
+<div class="member-grid">
+<div class="member"><span class="dot"></span><div><b>Sociedad Argentina de Cirugía Plástica, Estética y Reparadora (SACPER)</b><span>Miembro titular · 2014</span></div></div>
+<div class="member"><span class="dot"></span><div><b>Sociedad de Cirugía Plástica de Buenos Aires (SCPBA)</b><span>Miembro titular · 2010</span></div></div>
+<div class="member"><span class="dot"></span><div><b>Colegio Argentino de Cirujanos Cardiovasculares</b><span>Miembro titular · 2002</span></div></div>
+<div class="member"><span class="dot"></span><div><b>Colegio de Cirugía Venosa y Linfática (UCA)</b><span>Miembro titular · 1993</span></div></div>
+</div>
+<div class="logos-strip" style="margin-top:20px;border:1px solid var(--line)"><img src="assets/logos-scpba-sacper.png" alt="SCPBA y SACPER"></div>
+</div>
+<div>
+<span class="eyebrow">Cargos</span>
+<h2>Experiencia hospitalaria</h2>
+<div class="timeline">
+<div class="t-item"><span class="year">1990–1994</span><h3>Residencia completa y Jefe de Residentes de Cirugía General</h3><p>Hospital Naval Buenos Aires.</p></div>
+<div class="t-item"><span class="year">1994–1995</span><h3>Cirujano de Guardia</h3><p>Hospital Naval Buenos Aires "Cirujano Mayor Dr. Pedro Mallo".</p></div>
+<div class="t-item"><span class="year">1996–1997</span><h3>Médico concurrente, Cirugía Cardiovascular</h3><p>Hospital Argerich, con régimen de residente.</p></div>
+<div class="t-item"><span class="year">1996–actualidad</span><h3>Médico cirujano, Urgencias y División Cirugía</h3><p>Hospital Municipal de Agudos Parmenio T. Piñero, CABA.</p></div>
+<div class="t-item"><span class="year">2008–2010</span><h3>Cirugía Plástica y Reparadora</h3><p>Centro Médico Integral Fitz Roy, CABA.</p></div>
+<div class="t-item"><span class="year">2012</span><h3>Cirugía Plástica y Reparadora</h3><p>Hospital Municipal de Oncología María Curie, CABA. Concurrente ad honorem.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<span class="eyebrow">Reconocimientos</span>
+<h2>Premios</h2>
+<div class="awards">
+<div class="award"><span class="tag">Premio Cirujano Maestro · Dr. Jack Davis</span><h3>“Tumor de Askin — Caso Problema”</h3><p>VI Jornadas Interuniversitarias de Cirugía Plástica "Dr. Francisco Arespacochaga" · UCA y Universidad Nacional de Córdoba · Córdoba, septiembre de 2004.</p></div>
+<div class="award"><span class="tag">Premio Accésit · Dr. Emilio Etala</span><h3>“Actualización del Tratamiento de la Mama Tuberosa”</h3><p>Monografía final, Cátedra de Cirugía Plástica y Reconstructiva · Pontificia Universidad Católica Argentina · Buenos Aires, diciembre de 2006.</p></div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<span class="eyebrow">Producción científica</span>
+<h2>Trabajos presentados</h2>
+<div class="papers">
+<div class="paper"><span class="yr">2006</span><div><h3>“Patología Malar — Presentación de dos casos”</h3><p>V Jornada para Médicos Residentes en Cirugía Plástica "Dr. José M. Robles" · SCPBA y SACPER · Buenos Aires.</p></div></div>
+<div class="paper"><span class="yr">2007</span><div><h3>“New Ways for Face and Body Contouring: Growth Factors and Stem Cells”</h3><p>14.º Congreso Internacional IPRAS · Berlín, Alemania.</p></div></div>
+<div class="paper"><span class="yr">2008</span><div><h3>“Facial Rejuvenation: Stem Cells and Growth Factors”</h3><p>XIX Congreso ISAPS · Melbourne, Australia. Autores: Chajchir A., Chajchir G., Peláez A., Sabogal Alessio E.</p></div></div>
+<div class="paper"><span class="yr">2008</span><div><h3>“Body Contouring After Massive Weight Loss”</h3><p>XIX Congreso ISAPS · Melbourne, Australia · Centro Médico Barrancas.</p></div></div>
+<div class="paper"><span class="yr">2008</span><div><h3>“Traumatismos maxilofaciales de tejidos blandos: caso clínico”</h3><p>Co-autor · XXV Jornadas Multidisciplinarias, Hospital P. Piñero · Buenos Aires.</p></div></div>
+<div class="paper"><span class="yr">2012</span><div><h3>“Tratamiento quirúrgico de la ginecomastia severa a pedículo inferior”</h3><p>42.º Congreso Argentino de Cirugía Plástica · SACPER · Buenos Aires.</p></div></div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<span class="eyebrow">En acción</span>
+<h2>En quirófano y congresos</h2>
+<div class="work-gallery">
+<image-slot id="w1" shape="rounded" placeholder="Foto en quirófano"></image-slot>
+<image-slot id="w2" shape="rounded" placeholder="Foto en congreso"></image-slot>
+<image-slot id="w3" shape="rounded" placeholder="Foto con pacientes"></image-slot>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="wrap">
+<div class="cta-band">
+<h2>¿Querés consultarlo personalmente?</h2>
+<p>Reservá un turno en la agenda online o dejá tu consulta gratuita y el doctor te contactará.</p>
+<div class="row"><a href="reserva.html" class="btn btn-primary">Reservar turno</a><a href="consulta.html" class="btn btn-outline">Consulta gratuita</a></div>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="wrap">
+<div class="foot-grid">
+<div><img src="assets/logo-white.png" alt="" class="foot-logo"><h3>Dr. Edgardo Sabogal</h3><p>Especialista Universitario en Cirugía Plástica, Estética y Reparadora (UCA). Miembro titular de SACPER y SCPBA.</p></div>
+<div><h3>Navegación</h3><ul><li><a href="reserva.html">Reservar turno</a></li><li><a href="perfil.html">Trayectoria del doctor</a></li><li><a href="consulta.html">Consulta gratuita</a></li><li><a href="procedimientos.html">Procedimientos</a></li></ul></div>
+<div><h3>Contacto</h3><ul><li>Carlos Pellegrini 1175, 6.º C · CABA</li><li>Teléfono: 15-5000-5210</li><li><a href="https://www.instagram.com/dredgardosabogal" target="_blank" rel="noopener">Instagram</a></li><li>Lun a Vie · 13:00–19:30 h</li></ul></div>
+</div>
+<div class="foot-note"><span>© 2026 Consultorio Edgardo Sabogal · M.N. 79653 · Buenos Aires, Argentina</span><span>La información de este sitio no reemplaza la consulta médica.</span></div>
+</div>
+</footer>
+</body>
+</html>
